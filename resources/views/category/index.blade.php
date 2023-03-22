@@ -6,6 +6,9 @@
             <div class="col">
                 <h2>Category</h2>
             </div>
+            <div class="col d-flex justify-content-end">
+                <a href="" class="btn btn-primary text-center">Create</a>
+            </div>
         </div>
         <table class="table">
             <thead>
