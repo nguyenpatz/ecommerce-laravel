@@ -25,7 +25,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="">Slug</label>
-                        <input type="text" class="form-control" name="slug" id="input-slug">
+                        <input type="text" class="form-control" name="slug" id="input-slug" required>
                     </div>
                 </div>
             </div>
