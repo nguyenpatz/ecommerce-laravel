@@ -65,7 +65,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        Log::debug($category);
+        return view('category.edit', [
+            'category' => $category,
+        ]);
     }
 
     /**
@@ -75,9 +79,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
         //
+        Category::find($id)->update([
+            'name' => $request->name,
+            'slug' => $request->slug,
+        ]);
+
+        return redirect()->route('category.index')->withStatus('Updated successful!');
     }
 
     /**

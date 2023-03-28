@@ -29,7 +29,7 @@
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->slug }}</td>
                         <td class="d-flex">
-                            <a href="{{ route('category.edit', $category->id )}}" class="btn btn-info">Edit</a>
+                            <a href="{{ route('category.edit', $category->id )}}" class="btn btn-info d-block" style="margin-right: 10px;">Edit</a>
                             <form action="{{route('category.destroy', $category->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
