@@ -7,7 +7,7 @@
                 <h2>Products</h2>
             </div>
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('category.create') }}" class="btn btn-primary text-center">Create</a>
+                <a href="{{ route('product.create') }}" class="btn btn-primary text-center">Create</a>
             </div>
         </div>
         <table class="table">
@@ -41,8 +41,9 @@
                         <td>{{ $product->price }} USD</td>
                         <td>{{ $product->category->name }}</td>
                         <td>
-                            <a href="{{ route('product.edit', $product->id )}}" class="btn btn-info d-block" style="margin-right: 10px;">Edit</a>
-                            <form action="{{route('product.destroy', $product->id)}}" method="POST">
+                            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-info d-block"
+                                style="margin-right: 10px;">Edit</a>
+                            <form action="{{ route('product.destroy', $product->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -58,5 +59,5 @@
     </div>
 @endsection
 @push('css')
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 @endpush

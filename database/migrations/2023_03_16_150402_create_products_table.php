@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->foreignId('category_id')->constrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
